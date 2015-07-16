@@ -1,0 +1,10 @@
+diff --git a/build/config/MinGW-CrossEnv b/build/config/MinGW-CrossEnv
+index c6e9b37..4599223 100644
+--- a/build/config/MinGW-CrossEnv
++++ b/build/config/MinGW-CrossEnv
+@@ -73,4 +73,4 @@ SYSFLAGS = -mno-cygwin -D_WIN32 -DMINGW32 -DWINVER=0x500 -DPOCO_NO_FPENVIRONMENT
+ #
+ # System Specific Libraries
+ #
+-SYSLIBS  = -liphlpapi -lws2_32 -lssl -lcrypto -lws2_32 -lgdi32
++SYSLIBS  = -liphlpapi -lws2_32 -lssl -lcrypto -lws2_32 -lgdi32 -lz -lpcre -lexpat

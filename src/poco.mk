@@ -4,8 +4,8 @@
 PKG             := poco
 $(PKG)_IGNORE   :=
 $(PKG)_VERSION  := 1.4.7p1
-$(PKG)_CHECKSUM := 8f0c65a0e477f0d623ebc589069357ef7e69217c
-$(PKG)_SUBDIR   := $(PKG)-$($(PKG)_VERSION)
+$(PKG)_CHECKSUM := 45c4b81479c9264a0e9c1af9ce6bd0ef7718dbe2
+$(PKG)_SUBDIR   := $(PKG)-$($(PKG)_VERSION)-all
 $(PKG)_FILE     := $($(PKG)_SUBDIR).tar.gz
 $(PKG)_URL      := http://pocoproject.org/releases/$(PKG)-$(word 1,$(subst p, ,$($(PKG)_VERSION)))/$($(PKG)_FILE)
 $(PKG)_DEPS     := gcc expat openssl pcre sqlite zlib
@@ -23,6 +23,7 @@ define $(PKG)_BUILD
         --unbundled \
         --prefix='$(PREFIX)/$(TARGET)' \
         --no-tests \
+				--omit=Data/ODBC \
         --no-samples
     $(if $(BUILD_STATIC), \
         $(SED) -i 's:// #define POCO_STATIC:#define POCO_STATIC:' \
